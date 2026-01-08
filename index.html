@@ -32,6 +32,19 @@ header {
   letter-spacing: -0.3px;
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.header-phone {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  white-space: nowrap;
+}
+
 nav a {
   margin-left: 34px;
   text-decoration: none;
@@ -69,6 +82,17 @@ nav a {
 .hero-content p {
   font-size: 17px;
   color: rgba(255,255,255,0.85);
+}
+
+.hero-phone {
+  margin-top: 22px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.hero-phone strong {
+  font-weight: 700;
 }
 
 /* COMMON */
@@ -207,27 +231,28 @@ footer {
    ========================= */
 @media (max-width: 768px) {
 
-  /* HEADER */
   header {
     padding: 16px 20px;
   }
 
   nav {
-    display: none; /* 모바일에서는 메뉴 숨김 */
+    display: none;
   }
 
   .logo {
     font-size: 20px;
   }
 
-  /* HERO */
+  .header-phone {
+    font-size: 14px;
+  }
+
   .hero {
     height: 360px;
   }
 
   .hero-content {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 20px;
   }
 
   .hero-content h1 {
@@ -239,7 +264,10 @@ footer {
     font-size: 15px;
   }
 
-  /* COMMON */
+  .hero-phone {
+    font-size: 16px;
+  }
+
   .container {
     margin: 70px auto;
     padding: 0 20px;
@@ -250,39 +278,21 @@ footer {
     margin-bottom: 28px;
   }
 
-  /* INTRO */
   .intro-lead {
     font-size: 14.5px;
     margin-bottom: 32px;
   }
 
-  .intro-grid {
+  .intro-grid,
+  .service-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
   }
 
-  .intro-card {
+  .intro-card,
+  .service-card {
     padding: 24px;
   }
 
-  /* SERVICE */
-  .service-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
-
-  .service-card {
-    padding: 26px;
-  }
-
-  .service-badge {
-    top: -12px;
-    left: 20px;
-    font-size: 11px;
-    padding: 5px 10px;
-  }
-
-  /* PROCEDURE */
   .procedure-line {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
@@ -293,7 +303,6 @@ footer {
     font-size: 14px;
   }
 
-  /* CALL BUTTON */
   .call-btn {
     right: 16px;
     bottom: 16px;
@@ -301,7 +310,6 @@ footer {
     font-size: 14px;
   }
 
-  /* FOOTER */
   footer {
     font-size: 12px;
     padding: 24px 16px;
@@ -309,7 +317,6 @@ footer {
   }
 }
 
-/* 초소형 기기 대응 */
 @media (max-width: 390px) {
   .hero-content h1 {
     font-size: 24px;
@@ -319,36 +326,39 @@ footer {
     grid-template-columns: 1fr;
   }
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">방용 D&C</div>
-  <nav>
-    <a href="#intro">회사소개</a>
-    <a href="#service">상담서비스</a>
-    <a href="#procedure">진행절차</a>
-    <a href="#contact">문의하기</a>
-  </nav>
+  <div class="logo">OK MOTORHOME</div>
+
+  <div class="header-right">
+    <span class="header-phone">010-4262-8266</span>
+    <nav>
+      <a href="#intro">회사소개</a>
+      <a href="#service">상담서비스</a>
+      <a href="#procedure">진행절차</a>
+      <a href="#contact">문의하기</a>
+    </nav>
+  </div>
 </header>
 
 <section class="hero">
   <div class="hero-content">
     <h1>렌트카 법인 양도·양수 컨설팅</h1>
     <p>복잡한 절차를 단순하게, 조건은 더욱 명확하게.</p>
+    <div class="hero-phone">상담 문의 : <strong>010-4262-8266</strong></div>
   </div>
 </section>
 
 <div class="container">
 
-  <!-- 회사소개 -->
   <section id="intro">
     <h2 class="section-title">회사소개</h2>
     <p class="intro-lead">
-      방용D&C은 렌터카 법인 설립부터 양도·양수까지<br>
+      오케이모터홈은 렌터카 법인 설립부터 양도·양수까지<br>
       렌터카 사업 전반을 컨설팅하는 전문 기업입니다.
     </p>
 
@@ -381,7 +391,6 @@ footer {
     </div>
   </section>
 
-  <!-- 상담서비스 -->
   <section id="service">
     <h2 class="section-title">상담서비스</h2>
 
@@ -406,7 +415,6 @@ footer {
     </div>
   </section>
 
-  <!-- 진행절차 -->
   <section id="procedure">
     <h2 class="section-title">진행 절차</h2>
     <div class="procedure-line">
