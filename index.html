@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>렌트카 법인 양도·양수 컨설팅</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  background: #fff;
+  color: #111;
+  line-height: 1.75;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 90px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+nav a {
+  margin-left: 34px;
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 460px;
+  background: linear-gradient(
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.65)
+  ), url('https://images.unsplash.com/photo-1521791055366-0d553872125f') center/cover no-repeat;
+}
+
+.hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 90px;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+
+.hero-content p {
+  font-size: 17px;
+  color: rgba(255,255,255,0.85);
+}
+
+/* COMMON */
+.container {
+  max-width: 1080px;
+  margin: 110px auto;
+  padding: 0 24px;
+}
+
+.section-title {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  margin-bottom: 40px;
+}
+
+/* INTRO */
+.intro-lead {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 46px;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 28px;
+}
+
+.intro-card {
+  border: 1px solid #eee;
+  padding: 34px;
+  border-radius: 12px;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.intro-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.12);
+}
+
+.icon {
+  width: 34px;
+  height: 34px;
+  margin-bottom: 14px;
+}
+
+.intro-card strong {
+  display: block;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+/* SERVICE */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap: 30px;
+}
+
+.service-card {
+  position: relative;
+  border: 1px solid #eee;
+  padding: 38px;
+  border-radius: 12px;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.14);
+}
+
+.service-badge {
+  position: absolute;
+  top: -14px;
+  left: 30px;
+  background: #111;
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+/* PROCEDURE */
+.procedure-line {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+  gap: 22px;
+}
+
+.procedure-line div {
+  border: 1px solid #eee;
+  padding: 26px 20px;
+  border-radius: 12px;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.procedure-line div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.12);
+}
+
+.procedure-line span {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* CALL BUTTON */
+.call-btn {
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  background: #111;
+  color: #fff;
+  padding: 16px 26px;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+}
+
+/* FOOTER */
+footer {
+  border-top: 1px solid #eee;
+  padding: 32px 20px;
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+}
+
+/* =========================
+   MOBILE OPTIMIZATION
+   ========================= */
+@media (max-width: 768px) {
+
+  /* HEADER */
+  header {
+    padding: 16px 20px;
+  }
+
+  nav {
+    display: none; /* 모바일에서는 메뉴 숨김 */
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  /* HERO */
+  .hero {
+    height: 360px;
+  }
+
+  .hero-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+  }
+
+  /* COMMON */
+  .container {
+    margin: 70px auto;
+    padding: 0 20px;
+  }
+
+  .section-title {
+    font-size: 22px;
+    margin-bottom: 28px;
+  }
+
+  /* INTRO */
+  .intro-lead {
+    font-size: 14.5px;
+    margin-bottom: 32px;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .intro-card {
+    padding: 24px;
+  }
+
+  /* SERVICE */
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .service-card {
+    padding: 26px;
+  }
+
+  .service-badge {
+    top: -12px;
+    left: 20px;
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  /* PROCEDURE */
+  .procedure-line {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .procedure-line div {
+    padding: 20px 16px;
+    font-size: 14px;
+  }
+
+  /* CALL BUTTON */
+  .call-btn {
+    right: 16px;
+    bottom: 16px;
+    padding: 14px 20px;
+    font-size: 14px;
+  }
+
+  /* FOOTER */
+  footer {
+    font-size: 12px;
+    padding: 24px 16px;
+    line-height: 1.6;
+  }
+}
+
+/* 초소형 기기 대응 */
+@media (max-width: 390px) {
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  .procedure-line {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">OK MOTORHOME</div>
+  <nav>
+    <a href="#intro">회사소개</a>
+    <a href="#service">상담서비스</a>
+    <a href="#procedure">진행절차</a>
+    <a href="#contact">문의하기</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>렌트카 법인 양도·양수 컨설팅</h1>
+    <p>복잡한 절차를 단순하게, 조건은 더욱 명확하게.</p>
+  </div>
+</section>
+
+<div class="container">
+
+  <!-- 회사소개 -->
+  <section id="intro">
+    <h2 class="section-title">회사소개</h2>
+    <p class="intro-lead">
+      오케이모터홈은 렌터카 법인 설립부터 양도·양수까지<br>
+      렌터카 사업 전반을 컨설팅하는 전문 기업입니다.
+    </p>
+
+    <div class="intro-grid">
+      <div class="intro-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.8">
+          <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/>
+        </svg>
+        <strong>전문성</strong>
+        <p>법규·행정·차량 구조에 대한 실무 기반 분석</p>
+      </div>
+
+      <div class="intro-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.8">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M8 12l2 2 4-4"/>
+        </svg>
+        <strong>안정성</strong>
+        <p>시장 상황을 고려한 현실적이고 안정적인 방향</p>
+      </div>
+
+      <div class="intro-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.8">
+          <path d="M3 12h18"/>
+          <path d="M12 3v18"/>
+        </svg>
+        <strong>신뢰</strong>
+        <p>단순 중개가 아닌 실제 운영 중심 컨설팅</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 상담서비스 -->
+  <section id="service">
+    <h2 class="section-title">상담서비스</h2>
+
+    <div class="service-grid">
+      <div class="service-card">
+        <span class="service-badge">01</span>
+        <h3>렌터카 신규법인 설립 컨설팅</h3>
+        <p>법규·행정·차량 조건 등 신규 설립 전 과정을 체계적으로 지원합니다.</p>
+      </div>
+
+      <div class="service-card">
+        <span class="service-badge">02</span>
+        <h3>렌터카 법인 양도·양수 컨설팅</h3>
+        <p>법인 상태와 조건을 종합 검토하여 최적의 거래를 진행합니다.</p>
+      </div>
+
+      <div class="service-card">
+        <span class="service-badge">03</span>
+        <h3>영업소 창업 상담</h3>
+        <p>영업소 창업을 고려하시는 분들을 위한 맞춤 상담을 제공합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 진행절차 -->
+  <section id="procedure">
+    <h2 class="section-title">진행 절차</h2>
+    <div class="procedure-line">
+      <div><span>01</span>상담 접수</div>
+      <div><span>02</span>법인 검토</div>
+      <div><span>03</span>조건 분석</div>
+      <div><span>04</span>서류 준비</div>
+      <div><span>05</span>계약 체결</div>
+      <div><span>06</span>양도·양수 완료</div>
+    </div>
+  </section>
+
+</div>
+
+<a href="tel:010-4262-8266" class="call-btn">무료 상담</a>
+
+<footer id="contact">
+  경기도 용인시 처인구 포곡읍 옥현로 9-1 · okmotorhome@naver.com · 010-4262-8266
+</footer>
+
+</body>
+</html>
